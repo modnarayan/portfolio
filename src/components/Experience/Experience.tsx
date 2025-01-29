@@ -4,8 +4,8 @@ import { Check } from "lucide-react";
 const Experience = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Mod_Narayan_Singh_2.6+years.pdf";
-    link.download = "Mod_Narayan_Singh_Resume.pdf";
+    link.href = "/Mod_Narayan_Singh_2.6_years.pdf";
+    link.download = "Mod_Narayan_Singh_dev_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
