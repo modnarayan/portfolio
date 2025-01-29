@@ -34,13 +34,13 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     const res = await emailjs.send(serviceID!, templateID!, data, userID!);
     try {
-        console.log('res :', res)
+      console.log("res :", res);
       if (res.status === 200) {
         toast.success("Message sent successfully!");
         reset();
       }
     } catch (error) {
-        console.log(error)
+      console.log(error);
       console.error(error);
       toast.error("Failed to send message. Please try again later.");
     }
@@ -151,7 +151,7 @@ const Contact = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://x.com/Sing6Mod"
                   className="w-12 h-12 bg-neutral-800 hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-colors duration-300"
                 >
                   <svg
