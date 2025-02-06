@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Seo from "@/components/Seo/Seo";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,6 +60,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="fMDJ0foe7QibtSed0-eK9eKaZYQK3huqBYTFvNRiBFY"
+          />
+        </Head>
         <Toaster position="bottom-center" />
         {children}
       </body>
