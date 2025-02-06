@@ -16,7 +16,12 @@ const Projects = () => {
           {/* <!-- Project 1 --> */}
           <div className="group bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 hover:border-blue-500 transition-all duration-300 animate__animated animate__fadeInLeft">
             <div className="relative p-6">
-              <div className="absolute top-0 right-0 mt-4 mr-4 flex gap-2 flex-wrap">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Vendor &amp; Customer Portal
+              </h3>
+
+              {/* Move this section below heading on small screens */}
+              <div className="flex flex-col gap-2 mt-2 md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 md:flex-row text-center">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
                   Next.js
                 </span>
@@ -24,9 +29,7 @@ const Projects = () => {
                   Zustand
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Vendor &amp; Customer Portal
-              </h3>
+
               <p className="text-gray-400 mb-4">Amerit Fleet Solutions</p>
               <div className="space-y-4">
                 <p className="text-gray-300">
@@ -68,6 +71,7 @@ const Projects = () => {
                   </li>
                 </ul>
               </div>
+
               <div className="mt-6 flex gap-4">
                 <Link href="https://customers.ameritfleet.com/" target="_blank">
                   <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
@@ -85,11 +89,13 @@ const Projects = () => {
               </div>
             </div>
           </div>
+
           {/* 
         <!-- Project 2 --> */}
           <div className="group bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 hover:border-blue-500 transition-all duration-300 animate__animated animate__fadeInRight">
             <div className="relative p-6">
-              <div className="absolute top-0 right-0 mt-4 mr-4 flex gap-2">
+              <h3 className="text-xl font-bold text-white mb-2">Quick Chat</h3>
+              <div className="flex flex-col gap-2 mt-2 md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 md:flex-row text-center">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
                   PERN
                 </span>
@@ -100,7 +106,7 @@ const Projects = () => {
                   Redis
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Quick Chat</h3>
+
               <p className="text-gray-400 mb-4">Group Chat</p>
               <div className="space-y-4">
                 <p className="text-gray-300">Built a real-time chat App</p>
@@ -159,7 +165,10 @@ const Projects = () => {
           {/* <!-- Project 3 --> */}
           <div className="group bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 hover:border-blue-500 transition-all duration-300 animate__animated animate__fadeInLeft">
             <div className="relative p-6">
-              <div className="absolute top-0 right-0 mt-4 mr-4 flex gap-2">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Saas Cloudinary
+              </h3>
+              <div className="flex flex-col gap-2 mt-2 md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 md:flex-row text-center">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
                   Next.js
                 </span>
@@ -167,9 +176,7 @@ const Projects = () => {
                   Cloudinary API
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Saas Cloudinary
-              </h3>
+
               <p className="text-gray-400 mb-4">Full Stack Application</p>
               <div className="space-y-4">
                 <p className="text-gray-300">
@@ -229,12 +236,12 @@ const Projects = () => {
           {/* <!-- Project 4 --> */}
           <div className="group bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 hover:border-blue-500 transition-all duration-300 animate__animated animate__fadeInRight">
             <div className="relative p-6">
-              <div className="absolute top-0 right-0 mt-4 mr-4 flex gap-2">
+              <h3 className="text-xl font-bold text-white mb-2">E-Academy</h3>
+              <div className="flex flex-col gap-2 mt-2 md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 md:flex-row text-center">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
                   MERN
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">E-Academy</h3>
               <p className="text-gray-400 mb-4">Online Classes</p>
               <div className="space-y-4">
                 <p className="text-gray-300">
@@ -276,7 +283,7 @@ const Projects = () => {
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex gap-4 md:flex-row flex-col">
                 <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 opacity-50 cursor-not-allowed">
                   View Demo
                 </button>

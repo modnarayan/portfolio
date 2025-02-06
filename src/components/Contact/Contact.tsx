@@ -184,7 +184,11 @@ const Contact = () => {
                 type="text"
                 id="name"
                 {...register("name")}
-                className="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                className={`mt-1 block w-full px-4 py-3 bg-neutral-700 border rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors ${
+                  errors.name
+                    ? "border-red-500 focus:border-red-500 "
+                    : "border-neutral-600 focus:border-blue-500"
+                }`}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">
@@ -205,7 +209,11 @@ const Contact = () => {
                 type="email"
                 id="email"
                 {...register("email")}
-                className="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                className={`mt-1 block w-full px-4 py-3 bg-neutral-700 border rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors ${
+                  errors.email
+                    ? "border-red-500 focus:border-red-500 "
+                    : "border-neutral-600 focus:border-blue-500"
+                }`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">
@@ -226,7 +234,11 @@ const Contact = () => {
                 id="message"
                 rows={4}
                 {...register("message")}
-                className="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                className={`mt-1 block w-full px-4 py-3 bg-neutral-700 border rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors ${
+                  errors.message
+                    ? "border-red-500 focus:border-red-500 "
+                    : "border-neutral-600 focus:border-blue-500"
+                }`}
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">
