@@ -30,7 +30,7 @@ const HomePage = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-300">
-                2.6+ years of experience in building modern web applications
+                2.9+ years of experience in building modern web applications
               </p>
             </div>
 

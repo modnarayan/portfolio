@@ -3,12 +3,13 @@ import { Check } from "lucide-react";
 
 const Experience = () => {
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Mod_Narayan_Singh_2.6_years.pdf";
-    link.download = "Mod_Narayan_Singh_dev_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // const link = document.createElement("a");
+    // link.href = "/Mod_Narayan_Singh_2.9_years.pdf";
+    // link.download = "Mod_Narayan_Singh_dev_Resume.pdf";
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
+    window.open("/Mod_Narayan_Singh_2.9_years.pdf", "_blank");
   };
   return (
     <section id="experience" className="py-20 bg-neutral-900">
