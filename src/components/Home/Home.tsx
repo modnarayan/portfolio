@@ -49,7 +49,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const rings = ringRefs.current;
-    let angles = new Array(rings.length).fill(0);
+    const angles = new Array(rings.length).fill(0);
     let animationId: number;
 
     function animate() {
@@ -114,8 +114,8 @@ const HomePage = () => {
     const rings = ringRefs.current;
     const radius = 300;
     const step = (2 * Math.PI) / 4;
-
-    rings.forEach((ring, ringIndex) => {
+    // @typescript-eslint/no-unused-var
+    rings.forEach((ring) => {
       if (!ring) return;
       const children = Array.from(ring.children);
       children.forEach((child, i) => {
@@ -126,7 +126,7 @@ const HomePage = () => {
       });
     });
 
-    let angles = new Array(rings.length).fill(0);
+    const angles = new Array(rings.length).fill(0);
     function animate() {
       rings.forEach((ring, idx) => {
         if (!ring) return;
