@@ -1,18 +1,149 @@
-import { Code2 } from "lucide-react";
+import {
+  Code2,
+  Database,
+  Globe,
+  Server,
+  Smartphone,
+  Zap,
+  Flame,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+const skillRings = [
+  // Core Technologies (Inner Ring)
+  [
+    { name: "JavaScript", icon: Code2, color: "text-yellow-400" },
+    { name: "TypeScript", icon: Code2, color: "text-blue-400" },
+    { name: "React", icon: Smartphone, color: "text-cyan-400" },
+    { name: "Node.js", icon: Server, color: "text-green-400" },
+    { name: "React Native", icon: Smartphone, color: "text-green-400" },
+    { name: "Nest.js", icon: Flame, color: "text-red-400" },
+  ],
+  // Frameworks & Libraries (Middle Ring)
+  [
+    { name: "Next.js", icon: Globe, color: "text-purple-400" },
+    { name: "Express", icon: Server, color: "text-orange-400" },
+    { name: "MongoDB", icon: Database, color: "text-green-500" },
+    { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
+    { name: "GraphQL", icon: Zap, color: "text-pink-400" },
+    { name: "Docker", icon: Code2, color: "text-blue-300" },
+  ],
+  // Tools & Services (Outer Ring)
+  [
+    { name: "AWS", icon: Globe, color: "text-orange-300" },
+    { name: "Git", icon: Code2, color: "text-red-400" },
+    { name: "Python", icon: Code2, color: "text-yellow-300" },
+    { name: "REST API", icon: Zap, color: "text-emerald-400" },
+    { name: "Microservices", icon: Server, color: "text-violet-400" },
+    { name: "CI/CD", icon: Zap, color: "text-indigo-400" },
+    { name: "Redis", icon: Database, color: "text-red-300" },
+    { name: "Kubernetes", icon: Globe, color: "text-blue-600" },
+  ],
+];
+
 const HomePage = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const ringRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const rings = ringRefs.current;
+    let angles = new Array(rings.length).fill(0);
+    let animationId: number;
+
+    function animate() {
+      rings.forEach((ring, ringIndex) => {
+        if (!ring) return;
+
+        const children = Array.from(ring.children);
+        const baseRadius = 80 + ringIndex * 60; // Different radius for each ring
+        const step = (2 * Math.PI) / children.length;
+
+        // Different rotation speeds for each ring
+        const speed = isHovered ? 0.001 : 0.004 + ringIndex * 0.002;
+        angles[ringIndex] += speed;
+
+        children.forEach((child, i) => {
+          const angle = angles[ringIndex] + i * step;
+          const x = baseRadius * Math.cos(angle);
+          const y = baseRadius * Math.sin(angle) * 0.6; // Flatten the sphere slightly
+          const z = baseRadius * Math.sin(angle) * 0.3; // Add depth
+
+          const element = child as HTMLElement;
+          element.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+
+          // Add scale based on z-position for depth effect
+          const scale = 0.8 + (z + baseRadius) / (baseRadius * 4);
+          element.style.opacity = (
+            0.6 +
+            (z + baseRadius) / (baseRadius * 2)
+          ).toString();
+          element
+            .querySelector(".skill-icon")
+            ?.setAttribute("style", `transform: scale(${scale})`);
+        });
+      });
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [isHovered]);
+
   const arr = [
     "React.js",
     "Next.js",
     "TypeScript",
     "Node.js",
+    "Nest.js",
     "Express.js",
     "MongoDB",
     "Postgresql",
     "Docker",
     "AWS",
   ];
+
+  useEffect(() => {
+    const rings = ringRefs.current;
+    const radius = 300;
+    const step = (2 * Math.PI) / 4;
+
+    rings.forEach((ring, ringIndex) => {
+      if (!ring) return;
+      const children = Array.from(ring.children);
+      children.forEach((child, i) => {
+        const angle = i * step;
+        const x = radius * Math.cos(angle);
+        const y = radius * Math.sin(angle);
+        (child as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    let angles = new Array(rings.length).fill(0);
+    function animate() {
+      rings.forEach((ring, idx) => {
+        if (!ring) return;
+        const children = Array.from(ring.children);
+        const step = (2 * Math.PI) / children.length;
+        angles[idx] += 0.005 + idx * 0.005;
+        children.forEach((child, i) => {
+          const angle = angles[idx] + i * step;
+          const x = radius * Math.cos(angle);
+          const y = radius * Math.sin(angle);
+          (child as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }, []);
 
   return (
     <section
@@ -30,7 +161,7 @@ const HomePage = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-300">
-                2.9+ years of experience in building modern web applications
+                3+ years of experience in building modern web applications
               </p>
             </div>
 
@@ -69,48 +200,90 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20"></div>
-            <div className="relative bg-neutral-800 p-8 rounded-2xl border border-gray-700">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                    <Code2 className="text-blue-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white">
-                      Full Stack Developer
-                    </h3>
-                    <p className="text-gray-400">MERN Stack Specialist</p>
-                  </div>
+          {/* Multi-ring rotating skill sphere
+          <div className="relative flex justify-center items-center">
+            <div className="relative w-[350px] h-[350px] flex items-center justify-center">
+              {skillRings.map((ring, ringIndex) => (
+                <div
+                  key={ringIndex}
+                  ref={(el) => {
+                    ringRefs.current[ringIndex] = el;
+                  }}
+                  className="absolute w-full h-full flex items-center justify-center"
+                >
+                  {ring.map((skill, i) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="absolute text-blue-400 text-sm font-medium flex flex-col items-center"
+                      >
+                        <Icon className="w-6 h-6 mb-1" />
+                        {skill.name}
+                      </div>
+                    );
+                  })}
                 </div>
+              ))}
+            </div>
+          </div> */}
+          <div className="relative flex justify-center items-center">
+            <div
+              ref={containerRef}
+              className="relative w-[400px] h-[400px] flex items-center justify-center perspective-1000"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {/* Central glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" />
 
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Frontend Development</span>
-                    <span className="text-blue-500">91%</span>
-                  </div>
-                  <div className="h-2 bg-neutral-700 rounded-full">
-                    <div className="h-2 bg-blue-500 rounded-full w-11/12"></div>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Backend Development</span>
-                    <span className="text-blue-500">75%</span>
-                  </div>
-                  <div className="h-2 bg-neutral-700 rounded-full">
-                    <div className="h-2 bg-blue-500 rounded-full w-9/12"></div>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Cloud &amp; DevOps</span>
-                    <span className="text-blue-500">50%</span>
-                  </div>
-                  <div className="h-2 bg-neutral-700 rounded-full">
-                    <div className="h-2 bg-blue-500 rounded-full w-1/2"></div>
-                  </div>
-                </div>
+              {/* Central core */}
+              <div className="absolute w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg shadow-blue-500/50 z-10 flex items-center justify-center">
+                <Code2 className="w-6 h-6 text-white" />
               </div>
+
+              {skillRings.map((ring, ringIndex) => (
+                <div
+                  key={ringIndex}
+                  ref={(el) => {
+                    ringRefs.current[ringIndex] = el;
+                  }}
+                  className="absolute w-full h-full flex items-center justify-center"
+                >
+                  {ring.map((skill, i) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="absolute flex flex-col items-center group cursor-pointer transition-all duration-300 hover:scale-110"
+                      >
+                        <div className="skill-icon p-2 bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-700 group-hover:border-blue-400/60 transition-all duration-300 shadow-lg">
+                          <Icon
+                            className={`w-5 h-5 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
+                          />
+                        </div>
+                        <span
+                          className={`text-xs font-medium mt-1 ${skill.color} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}
+                        >
+                          {skill.name}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+
+              {/* Orbital rings visualization */}
+              {skillRings.map((_, ringIndex) => (
+                <div
+                  key={`ring-${ringIndex}`}
+                  className="absolute border border-gray-700/30 rounded-full"
+                  style={{
+                    width: `${(80 + ringIndex * 60) * 2}px`,
+                    height: `${(80 + ringIndex * 60) * 1.2}px`,
+                  }}
+                />
+              ))}
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ const Experience = () => {
     // document.body.appendChild(link);
     // link.click();
     // document.body.removeChild(link);
-    window.open("/Mod_Narayan_Singh_2.9_years.pdf", "_blank");
+    window.open("/Mod_Narayan_Singh_latesh.pdf", "_blank");
   };
   return (
     <section id="experience" className="py-20 bg-neutral-900">

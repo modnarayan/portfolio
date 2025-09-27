@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mod Narayan Singh | Full Stack Developer | Frontend Developer",
   description:
-    "MERN Stack Developer specializing in React, Node.js, and Next.js.",
+    "MERN Stack Developer specializing in React, Node.js, Nest.js and Next.js.",
   keywords: [
     "Mod Narayan Singh",
     "Full Stack Developer",
@@ -27,11 +27,29 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
     "Node.js",
+    "Nest.js",
+    "Portfolio",
+    "Web Developer",
+    "JavaScript",
+    "TypeScript",
+    "MongoDB",
+    "Express.js",
+    "AWS",
+    "Docker",
+    "GraphQL",
+    "REST API",
+    "Software Engineer",
+    "Web Applications",
+    "Tech Blog",
+    "Open Source",
+    "Programming",
+    "Coding",
+    "Software Development",
   ],
   openGraph: {
     title: "Mod Narayan Singh | Full Stack Developer | Frontend Developer",
     description:
-      "MERN Stack Developer specializing in React, Node.js, and Next.js.",
+      "MERN Stack Developer specializing in React, Node.js, Nest.js and Next.js.",
     url: "https://modnarayan.com",
     siteName: "Mod Narayan Singh",
     type: "profile", // Correct way to set OpenGraph profile type

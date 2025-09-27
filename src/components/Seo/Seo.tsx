@@ -13,8 +13,8 @@ export default function Seo() {
       url: "https://modnarayan.com",
       jobTitle: "Full Stack Developer",
       sameAs: [
-        "https://www.linkedin.com/in/your-profile",
-        "https://github.com/your-github",
+        "https://www.linkedin.com/in/mod-narayan-singh-4b98528a/",
+        "https://github.com/modnarayan",
       ],
     });
     document.head.appendChild(script);
