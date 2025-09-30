@@ -1,44 +1,59 @@
-import {
-  Code2,
-  Database,
-  Globe,
-  Server,
-  Smartphone,
-  Zap,
-  Flame,
-} from "lucide-react";
+import { Code2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+// React Icons imports
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNodedotjs,
+  SiNestjs,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiGraphql,
+  SiDocker,
+  SiAmazon,
+  SiGit,
+  SiPython,
+  SiRedis,
+  SiKubernetes,
+  SiGo,
+} from "react-icons/si";
+import { FaMobileAlt } from "react-icons/fa";
+import { TbApi } from "react-icons/tb";
+import { CiCircleCheck } from "react-icons/ci";
 
 const skillRings = [
   // Core Technologies (Inner Ring)
   [
-    { name: "JavaScript", icon: Code2, color: "text-yellow-400" },
-    { name: "TypeScript", icon: Code2, color: "text-blue-400" },
-    { name: "React", icon: Smartphone, color: "text-cyan-400" },
-    { name: "Node.js", icon: Server, color: "text-green-400" },
-    { name: "React Native", icon: Smartphone, color: "text-green-400" },
-    { name: "Nest.js", icon: Flame, color: "text-red-400" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+    { name: "React", icon: SiReact, color: "text-cyan-400" },
+    { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+    { name: "React Native", icon: FaMobileAlt, color: "text-green-400" },
+    { name: "Nest.js", icon: SiNestjs, color: "text-red-400" },
   ],
   // Frameworks & Libraries (Middle Ring)
   [
-    { name: "Next.js", icon: Globe, color: "text-purple-400" },
-    { name: "Express", icon: Server, color: "text-orange-400" },
-    { name: "MongoDB", icon: Database, color: "text-green-500" },
-    { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
-    { name: "GraphQL", icon: Zap, color: "text-pink-400" },
-    { name: "Docker", icon: Code2, color: "text-blue-300" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-purple-400" },
+    { name: "Express", icon: SiExpress, color: "text-orange-400" },
+    { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
+    { name: "GraphQL", icon: SiGraphql, color: "text-pink-400" },
+    { name: "Docker", icon: SiDocker, color: "text-blue-300" },
   ],
   // Tools & Services (Outer Ring)
   [
-    { name: "AWS", icon: Globe, color: "text-orange-300" },
-    { name: "Git", icon: Code2, color: "text-red-400" },
-    { name: "Python", icon: Code2, color: "text-yellow-300" },
-    { name: "REST API", icon: Zap, color: "text-emerald-400" },
-    { name: "Microservices", icon: Server, color: "text-violet-400" },
-    { name: "CI/CD", icon: Zap, color: "text-indigo-400" },
-    { name: "Redis", icon: Database, color: "text-red-300" },
-    { name: "Kubernetes", icon: Globe, color: "text-blue-600" },
+    { name: "AWS", icon: SiAmazon, color: "text-orange-300" },
+    { name: "Git", icon: SiGit, color: "text-red-400" },
+    { name: "Python", icon: SiPython, color: "text-yellow-300" },
+    { name: "Go (Golang)", icon: SiGo, color: "text-sky-400" },
+    { name: "REST API", icon: TbApi, color: "text-emerald-400" },
+    { name: "CI/CD", icon: CiCircleCheck, color: "text-indigo-400" },
+    { name: "Redis", icon: SiRedis, color: "text-red-300" },
+    { name: "Kubernetes", icon: SiKubernetes, color: "text-blue-600" },
   ],
 ];
 
