@@ -138,7 +138,7 @@ const Contact = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="https://github.com/Monu-11"
+                  href="https://github.com/modnarayan"
                   target="_blank"
                   className="w-12 h-12 bg-neutral-800 hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-colors duration-300"
                 >

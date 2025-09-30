@@ -15,7 +15,7 @@ const About = () => {
           <div className="bg-neutral-700/50 p-6 rounded-lg border border-neutral-600">
             <h3 className="text-xl font-semibold text-white mb-4">Professional Journey</h3>
             <p className="text-gray-300 leading-relaxed">
-              Dynamic Full Stack Developer with 2.6+ years of experience in designing and developing scalable web applications. Specializing in MERN stack development with a strong focus on creating high-performance, user-centric solutions.
+              Dynamic Full Stack Developer with 3+ years of experience in designing and developing scalable web applications. Specializing in MERN stack development with a strong focus on creating high-performance, user-centric solutions.
             </p>
           </div>
 

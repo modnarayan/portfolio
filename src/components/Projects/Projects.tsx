@@ -150,7 +150,7 @@ const Projects = () => {
                   View Demo
                 </button>
                 <Link
-                  href={"https://github.com/Monu-11/quick-chat"}
+                  href={"https://github.com/modnarayan/quick-chat"}
                   target="_blank"
                 >
                   {" "}
@@ -222,7 +222,7 @@ const Projects = () => {
                   View Demo
                 </button>
                 <Link
-                  href={"https://github.com/Monu-11/Saas-cloudinary"}
+                  href={"https://github.com/modnarayan/Saas-cloudinary"}
                   target="_blank"
                 >
                   <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-500 transition-colors duration-300">
@@ -288,7 +288,7 @@ const Projects = () => {
                   View Demo
                 </button>
                 <Link
-                  href="https://github.com/Monu-11/E-Academy-Frontend"
+                  href="https://github.com/modnarayan/E-Academy-Frontend"
                   target="_blank"
                 >
                   <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-500 transition-colors duration-300">
@@ -298,7 +298,7 @@ const Projects = () => {
 
                 {/* Backend Link */}
                 <Link
-                  href="https://github.com/Monu-11/E-Academy-backend"
+                  href="https://github.com/modnarayan/E-Academy-backend"
                   target="_blank"
                 >
                   <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-green-500 hover:text-green-500 transition-colors duration-300">
